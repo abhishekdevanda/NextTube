@@ -47,7 +47,7 @@ export const VideoRowCard = ({ video, size='default' }: VideoRowCardProps) => {
             {/* Thumbnail Section */}
             <Link href={`/videos/${video.id}`} className={ThumbnailVariants({ size })+" relative"}>
                 <Image
-                    src={video.snippet.thumbnails.standard.url}
+                    src={video.snippet.thumbnails.high.url || video.snippet.thumbnails.medium.url || video.snippet.thumbnails.default.url}
                     alt={video.snippet.title}
                     fill
                     priority
